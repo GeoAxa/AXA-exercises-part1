@@ -1,0 +1,11 @@
+def front_x(words):
+    liste_final=[]
+    list1=[]
+    list2=[]
+    for mot in words:
+        if mot[0]=="x":
+            list1.append(mot)
+        else :
+            list2.append(mot)
+        liste_final=sorted(list1)+ sorted(list2)
+    return liste_final
