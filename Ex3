@@ -1,0 +1,5 @@
+def cstmkey(tuple):
+  return tuple[len(tuple)-1]
+
+def sort_last(tuples):
+  return sorted(tuples, key=cstmkey)
