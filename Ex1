@@ -1,0 +1,6 @@
+def match_ends(words):
+    res=0
+    for mot in words:
+        if len(mot)>1 and mot[0]==mot[len(mot)-1]:
+            res += 1
+    return res
