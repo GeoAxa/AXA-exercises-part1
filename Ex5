@@ -1,0 +1,44 @@
+    
+def pos_liste(num, list):
+    i=0
+    p=len(list)
+    for number in list[0:p]:
+        if num<number:
+            break
+        else:
+            i+=1
+    print num
+    print i
+    return i
+
+def linear_merge(list1, list2):
+    i1=0
+    i2=0
+    pos_av=0
+    list_fin=[]
+    p=len(list1)
+    q=len(list2)
+    while i1<p and i2<q:
+        if list1[i1]>list2[i2] :
+            list=list2[:]
+            t=pos_liste(list1[i1], list)
+            if len(list_fin)==0:
+                list_fin=(list_fin[:]+list[i2:t])
+            else:
+                list_fin=(list_fin[:]+list[i2+1:t])
+            list_fin=list_fin[:]+list1[i1:i1+1]
+            i2=t
+        elif list1[i1]<=list2[i2] :
+            list=list1[:]
+            t=pos_liste(list2[i2], list)
+            if len(list_fin)==0:
+                list_fin=(list_fin[:]+list[i1:t])
+            else:
+                list_fin=(list_fin[:]+list[i1+1:t])
+            list_fin=list_fin[:]+list2[i2:i2+1]
+            i1=t
+    if i1>=p and i2!=q-1:
+        list_fin=list_fin[:]+list2[i2+1:q]
+    elif i2>=q and i1!=p-1:
+        list_fin=list_fin[:]+list1[i1+1:p]
+    return list_fin
