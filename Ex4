@@ -1,0 +1,13 @@
+def remove_adjacent(nums):
+    to_suppr=0
+    liste_suppr=[]
+    already_sup=0
+    nums1=nums[:]
+    for num in nums[0:len(nums)-1]:
+        if num==nums[to_suppr+1]:
+            liste_suppr.append(to_suppr)
+        to_suppr+=1
+    for j in liste_suppr:
+        del nums1[j-already_sup]
+        already_sup+=1            
+    return nums1
