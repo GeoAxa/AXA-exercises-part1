@@ -1,0 +1,6 @@
+def donuts(count):
+    if count<10:
+        word_fin= 'Number of donuts: {!r}'.format(count)
+    else:
+        word_fin= 'Number of donuts: many'                                           
+    return word_fin
