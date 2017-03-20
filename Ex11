@@ -1,0 +1,13 @@
+def not_bad(s):
+    word_fin=s
+    if s.find('not') != -1:
+        pos_not=s.index('not')
+    else:
+        pos_not=len(s)
+    if s.find('bad') != -1:
+        pos_bad=s.index('bad')
+    else:
+        pos_bad=0
+    if pos_not<pos_bad:
+        word_fin=s[0:pos_not]+'good'+s[pos_bad+3:len(s)]
+    return word_fin
