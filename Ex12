@@ -1,0 +1,8 @@
+def fr_bc_help(a):
+    m1=a[0: len(a)-int(len(a)/2)]
+    m2=a[len(a)-int(len(a)/2): len(a)]
+    return [m1,m2]
+
+def front_back(a, b):
+    word_fin=fr_bc_help(a)[0]+fr_bc_help(b)[0]+fr_bc_help(a)[1]+fr_bc_help(b)[1]
+    return word_fin
